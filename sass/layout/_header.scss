@@ -1,0 +1,237 @@
+.header {
+  background: url("../images/header-bg.jpg") no-repeat right top / cover;
+  height: 99rem;
+  padding-top: 3rem;
+}
+.header {
+  &__top {
+    @include flexbox;
+  }
+  &__nav {
+    text-align: end;
+    display: inline-block;
+    width: 100%;
+  }
+  &__link {
+    color: $primary-color;
+    font-weight: bold;
+  }
+  &__item {
+    display: inline-block;
+    margin: 2rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 18rem;
+    max-width: 82.5rem;
+  }
+  &__heading {
+    font-family: $secondary-font;
+    font-weight: bold;
+    font-size: $heading-size;
+    line-height: 1.2;
+    margin-bottom: 5rem;
+  }
+  &__search {
+    width: 100%;
+    border-radius: 1rem;
+    @include flexbox;
+    flex-direction: row;
+    margin-bottom: 5rem;
+    &-input {
+      > input {
+        width: 80%;
+        margin-left: 2rem;
+      }
+      @include flexbox;
+      width: 100%;
+      background-color: white;
+      padding: 2rem;
+      border: 1px solid #e0e0e0;
+      border-right: 0;
+      border-radius: 1rem 0 0 1rem;
+      flex-grow: 1;
+      color: #e0e0e0;
+    }
+  }
+
+  &__social {
+    @include flexbox;
+    padding: 1.5rem;
+    margin-left: -6rem;
+    font-size: 2.5rem;
+    &-item {
+      margin-left: 6rem;
+    }
+    &-number {
+      display: inline;
+    }
+  }
+}
+
+.search__dropdown {
+  position: relative;
+  width: 20rem;
+  font-size: 1.4rem;
+  &-select {
+    height: 6.6rem;
+    color: white;
+    background-color: $primary-color;
+    border-radius: 0 1rem 1rem 0;
+    padding: 2rem;
+    cursor: pointer;
+    @include flexbox(flex, center, center);
+  }
+  &-selected {
+    transition: 0.25s linear;
+    margin-right: 1.5rem;
+  }
+  &-list {
+    background-color: $primary-color;
+    margin-top: 1rem;
+    top: 100%;
+    left: 0;
+    right: 0;
+    position: absolute;
+    visibility: hidden;
+    border-radius: 1rem;
+
+    &:before {
+      content: "";
+      height: 1rem;
+      position: absolute;
+      left: 0;
+      right: 0;
+      background-color: transparent;
+      transform: translateY(-100%);
+    }
+  }
+  &:hover .search__dropdown-list {
+    opacity: 1;
+    visibility: visible;
+  }
+  &-item {
+    color: white;
+    height: 5rem;
+    width: 100%;
+    padding: 2rem;
+    &:first-child {
+      border-radius: 1rem 1rem 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 1rem 1rem;
+    }
+    &:hover {
+      transition: 0.25s linear;
+      background-color: $color-hover;
+    }
+  }
+}
+.validator {
+    &__img{
+        border: none;
+        text-decoration: none;
+        display: inline;
+        object-fit: cover;
+    }
+  }
+@media screen and (max-width: 1024px) {
+  .header {
+    height: $height-mo;
+  }
+  .header {
+    &__logo {
+      height: 4rem;
+      width: 8rem;
+    }
+    &__heading {
+      font-size: $heading-size-mo;
+    }
+    &__search-input {
+      height: 5rem;
+      padding: 1.5rem;
+    }
+  }
+  .search {
+    &__dropdown-select {
+      height: 5rem;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    &__content {
+      margin-top: 10rem;
+    }
+    &__item {
+      margin: 1rem;
+    }
+  }
+}
+@media screen and (max-width: 479px) {
+  .container {
+    padding: 0 4rem;
+  }
+  .header {
+    background-position: 75%;
+
+    &__nav {
+      font-size: $font-size-mo;
+    }
+    &__item {
+      margin: 10px 5px 0 0;
+    }
+    &__content {
+      margin-top: 20rem;
+    }
+    &__heading {
+      font-size: 3rem;
+    }
+    &__search {
+      margin-bottom: 3rem;
+      &-input {
+        > input {
+          font-size: $font-size-mo;
+          margin: 0;
+        }
+        height: 3rem;
+        padding: 5px;
+      }
+    }
+    &__social {
+      overflow: hidden;
+      margin-left: -2rem;
+      max-width: 25rem;
+      &-item {
+        margin-left: 1rem;
+      }
+      &-number {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .search__dropdown {
+    font-size: 8px;
+    width: 10rem;
+    &-select {
+      height: 3rem;
+      padding: 0;
+    }
+    &-selected {
+      font-size: 8px;
+    }
+
+    &-item {
+      padding: 5px;
+      height: 2rem;
+      overflow: hidden;
+      font-size: 8px;
+    }
+  }
+  .fab {
+    font-size: 1.5rem;
+  }
+}
+

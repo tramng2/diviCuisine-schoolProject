@@ -1,0 +1,84 @@
+.about {
+    height: 99rem;
+}
+.about {
+    &__content {
+        padding-top: 10rem;
+    }
+    &__heading {
+        font-size: 3rem;
+        font-family: $secondary-font;
+        font-weight: bold;
+        color: $primary-color;
+        &-title {
+            font-size: 8rem;
+            font-weight: bold;
+            line-height: 1.2;
+            font-family: $secondary-font;
+        }
+    }
+    &__desc{
+        margin-top: 5rem;
+        margin-left: 5rem;
+        &1{
+            padding-bottom: 3rem;
+        }
+    }
+    &__discover{
+        @include flexbox;
+        max-width: 27rem;
+        margin-top: 3rem;
+        color: white;
+        &-left{
+            margin-left: 5rem;
+            border-radius: 8px;
+            background-color: $primary-color;
+            cursor: pointer;
+            padding: 2rem;
+        }
+        &-right{
+            border-radius: 0 8px 8px 0;
+            padding: 2rem;
+            background-color: $orange-color-light;
+            transform: translateX(-1rem);
+        }
+
+        
+        
+    }
+}
+
+@media screen and (max-width:1023px){
+    .about{
+        height: $height-mo;
+        &__heading-title{
+            font-size: $heading-size-mo;
+        }
+        &__desc {
+            font-size: $font-size-mo;
+            margin-top: 3rem;
+        }
+        &__desc1{
+            margin-bottom: 1rem;
+        }
+        &__discover{
+            font-size: $font-size-mo;
+            max-width: 24rem;
+        }
+        &__desc1{
+            margin-bottom: 0;
+            padding-bottom: 2rem;
+        }
+    }
+    
+}
+@media screen and (max-width:479px){
+    .about{
+        &__heading{
+            &-title{
+                font-size: 3rem ;
+            }
+        }
+    }
+    
+}

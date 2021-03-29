@@ -1,0 +1,299 @@
+.blog {
+    height: 99rem;
+
+}
+.blog__top {
+    padding-top: 10rem;
+    height: 35rem;
+
+    &-title {
+        font-weight: bold;
+        font-size: $title-size;
+        font-family: $secondary-font;
+       
+    }
+    &-list {
+        margin-top: 2rem;
+        margin-left: -10rem;
+        overflow: hidden;
+        height: 35rem;
+        @include flexbox;
+    }
+    &-item {
+        @include flexbox;
+        margin-left: 10rem;
+        width: calc(100% / 3 - 10rem);
+        height: 5rem;
+        cursor: pointer;
+    }
+    &-image {
+        margin-right: 2rem;
+        width: 15rem;
+        height: 12rem;
+        object-fit: cover;
+    }
+    &-text {
+        height: calc(100% - 12rem);
+    }
+}
+.item {
+    &-title {
+        font-weight: bold;
+        font-size: 2.5rem;
+        color: black;
+    }
+    &-content {
+        color: $gray-color;
+    }
+}
+.content {
+    // background-color: purple;
+    @include flexbox;
+
+    &__featured {
+        width: 80%;
+        height: 100%;
+        margin-right: 4rem;
+
+        &-title {
+            font-family: $secondary-font;
+            font-size: $title-size;
+            font-weight: bold;
+            height: auto;
+            margin-bottom: 2rem;
+        }
+        &-left {
+            background: url("../images/main-bg.jpeg") no-repeat left center/cover;
+            height: calc(100% - 4.8rem - 2rem);
+        }
+    }
+    &__popular {
+        width: 25%;
+        height: 100%;
+        
+        &-list {
+            @include flexbox(flex, center, flex-start, column);
+            margin-top: -2rem;
+        }
+        &-title {
+            font-family: $secondary-font;
+            font-size: $title-size;
+            font-weight: bold;
+            height: 6rem;
+        }
+        &-item {
+            cursor: pointer;
+            &:nth-child(n + 2) {
+                border-top: 1px solid $gray-color;
+            }
+
+            margin-top: 2rem;
+            height: calc(100% / 3 - 2rem);
+            padding-top: 1.5rem;
+        }
+    }
+}
+.featured {
+    &-content {
+        max-width: 52rem;
+        padding: 4rem;
+    }
+    &-heading {
+        margin-top: 3rem;
+        font-size: 5rem;
+        font-weight: bold;
+    }
+    &-author {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        @include flexbox(flex, center);
+        &-image {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 10rem;
+            object-fit: cover;
+            margin-right: 2rem;
+        }
+    }
+}
+.popular-item {
+    &-top {
+        @include flexbox(flex, center);
+    }
+    &-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-right: 3rem;
+    }
+    &-content {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .content {
+        &__popular {
+            overflow: hidden;
+        }
+    }
+    .popular {
+        &-item-title {
+            font-size: 2rem;
+        }
+    }
+    .blog {
+        &__top {
+            &-list {
+                margin-left: -5rem;
+            }
+            &-item {
+                margin-left: 5rem;
+                width: calc(100% / 3 - 5rem);
+            }
+        }
+    }
+}
+@media screen and (max-width: 1279px) {
+    .content {
+        &__popular-item:last-child {
+            display: none;
+        }
+    }
+    .blog {
+        &__top-item {
+            width: calc(100% / 2 - 10rem);
+        }
+        &__top-item:last-child {
+            display: none;
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    .body {
+        font-size: $font-size-mo;
+    }
+    .blog {
+        height: $height-mo;
+        &__top {
+            &-title {
+                font-size: $title-size-mo;
+            }
+            padding-top: 4rem;
+            height: 24rem;
+        }
+    }
+    .content {
+        display: block;
+        &__featured {
+            &-title {
+                font-size: $title-size-mo;
+            }
+            width: 80%;
+            height: 60%;
+            margin-right: 2rem;
+        }
+
+        &__popular {
+            width: 100%;
+            margin-top: 2rem;
+            &-list {
+                margin-left: -5rem;
+                flex-direction: row;
+            }
+            &-item:nth-child(n + 2) {
+                display: none;
+            }
+            &-item {
+                margin-top: 0;
+                margin-left: 5rem;
+                padding-bottom: 1rem;
+            }
+            &-title {
+                font-size: $title-size-mo;
+                height: 4rem;
+            }
+        }
+        .fa-arrow-right {
+            display: none;
+        }
+    }
+    .featured {
+        &-heading {
+            font-size: $title-size-mo;
+            margin-top: 0;
+        }
+        &-content {
+            max-width: 35rem;
+        }
+        &-author-desc {
+            font-size: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .popular {
+        &-item-title {
+            font-size: 1.5rem;
+        }
+        &-item-content {
+            font-size: 1rem;
+        }
+    }
+    .item {
+        &-title {
+            font-size: $title-size-mo;
+        }
+    }
+}
+@media screen and (max-width: 479px) {
+    .blog {
+        height: 79rem;
+        
+        &__top {
+            height: 32rem;
+            
+            &-list {
+                display: block;
+                height: 20rem;
+                margin-left: 0;
+            }
+            &-item {
+                margin-left: 0;
+                display: block;
+                width: 100%;
+                height: 50%;
+            }
+            &-item:nth-child(n+2){
+                display: none;
+            }
+            &-image{
+                width: 25rem;
+                height: 18rem;
+                margin: 0 auto;
+                object-fit: cover;      
+            }
+           
+        }
+    }
+    .item{
+        &-title{
+            font-size: 1.6rem;
+            text-align: center;
+        }
+        &-content{
+            text-align: center;
+            font-size: 1rem;
+        }
+    }
+
+    .content {
+       &__featured{
+           width: 100%;
+           height: 100%;
+       }
+    }
+    
+}

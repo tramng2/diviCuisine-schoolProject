@@ -1,0 +1,64 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: $primary-font;
+  color: $secondary-color;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font-family: $primary-font;
+  font-size: 1.4rem;
+  outline: none;
+  border: none;
+  color: $primary-color;
+}
+.fa-caret-down {
+  color: white;
+}
+
+.fab {
+  color: $primary-color;
+}
+
+@media (max-width: 858px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 780px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 702px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 724px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 623px) {
+  html {
+    font-size: 8px;
+  }
+}

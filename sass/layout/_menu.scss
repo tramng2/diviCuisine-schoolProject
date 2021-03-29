@@ -1,0 +1,172 @@
+.menu {
+    padding-top: 10rem;
+    background-color: #f2f6f7;
+    height: 140rem;
+
+}
+
+.menu {
+    margin: 0 auto;
+    &__title {
+        font-size: 2.5rem;
+        text-align: center;
+        color: $primary-color;
+        text-transform: capitalize;
+        font-family: $secondary-font;
+    }
+    &__heading {
+        font-size: 8rem;
+        font-family: $secondary-font;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 2rem;
+        text-transform: capitalize;
+    }
+    &__tab {
+        @include flexbox(flex, flex-start, center);
+        overflow: hidden;
+        &-item {
+            padding: 2rem 5rem;
+            font-size: 2rem;
+            border-bottom: 2px solid $gray-light-color;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+        &-item.is-active,
+        &-item:hover {
+            color: $color-hover;
+            border-bottom: 2px solid $color-hover;
+        }
+    }
+    &__list{
+        @include flexbox;
+        flex-wrap: wrap;
+        margin: 5rem 0 0 -6rem;
+                  
+        &-item{
+            margin-bottom: 4rem;            
+            margin-left: 6rem;
+            width: calc(25% - 6rem);
+            height: 43rem;
+            position: relative;
+            &:hover .menu__list-content{
+                @include show();
+            }
+        }
+        &-sale{
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: white;
+            padding: 5px 1.5rem;
+            background-color: $primary-color;
+            border-radius: 2rem;
+            z-index: 2;
+
+        }
+        &-image{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &-content{
+            z-index: 3;
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.425);
+            padding: 2rem;
+            @include flexbox(flex, center,center,column);
+            @include hide();
+        }
+        &-price{
+            font-size: 5rem;
+            font-family: $secondary-font;
+        }
+        &-rating{
+            color: $primary-color;
+        }
+        &-name{
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+        &-order{
+            background-color: $primary-color;
+            color: white;
+            padding: 2rem 4rem;
+            border-radius: 8px;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    }
+}
+@media screen and (max-width:1024px){
+    .menu{
+        &__list{
+            margin: 5rem;
+            &-item{
+                margin-left: 0;
+                width: 100%;
+                margin-bottom: 3rem;
+                height: 30rem;
+                &:nth-child(n+4){
+                    display: none;
+                }
+            }
+            &-price{
+                font-size: 3rem;
+            }
+            &-name{
+                font-size: 3rem;
+            }
+            &-order{
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+            
+        }
+    }
+
+}
+@media screen and (max-width:768px){
+    .menu{
+        &__title{
+            font-size: 1.5rem;
+        }
+        &__heading{
+            font-size: 4rem;
+        }
+        &__tab{
+            &-item{
+                font-size: 1rem;
+                padding: 1rem 2rem;
+            }
+        }
+        &__list{
+            margin: 5rem;
+            &-item{
+                margin-left: 0;
+                width: 100%;
+                margin-bottom: 3rem;
+                height: 30rem;
+                &:nth-child(n+4){
+                    display: none;
+                }
+            }
+            &-price{
+                font-size: 3rem;
+            }
+            &-name{
+                font-size: 3rem;
+            }
+            &-order{
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+            
+        }
+    }
+}
